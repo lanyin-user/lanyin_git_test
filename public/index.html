@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yicalw - AI 智能体</title>
+<title>Yicalw - AI 鏅鸿兘浣?/title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;background:#0d1117;color:#c9d1d9;height:100vh;display:flex;flex-direction:column;overflow:hidden}
@@ -128,9 +128,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',s
 <body>
 
 <div class="header">
-  <h1>⚡ Yicalw</h1>
+  <h1>鈿?Yicalw</h1>
   <div class="actions">
-    <button class="btn-icon" onclick="toggleSidebar()" title="切换侧栏">☰ 面板</button>
+    <button class="btn-icon" onclick="toggleSidebar()" title="鍒囨崲渚ф爮">鈽?闈㈡澘</button>
   </div>
 </div>
 
@@ -138,110 +138,94 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',s
   <div class="nav-bar">
     <div class="profile-section">
       <div class="avatar" id="avatar" style="background:linear-gradient(135deg,#1f6feb,#58a6ff);">
-        <span style="filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))">⚡</span>
+        <span style="filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))">鈿?/span>
         <div class="pulse" id="statusDot"></div>
       </div>
-      <div class="agent-name">小奕</div>
-      <div class="agent-status" id="agentStatus">在线 · 随时待命</div>
+      <div class="agent-name">灏忓</div>
+      <div class="agent-status" id="agentStatus">鍦ㄧ嚎 路 闅忔椂寰呭懡</div>
     </div>
     <div class="nav-section">
-      <button class="nav-btn active" onclick="switchView('chat', this)"><span class="icon">💬</span><span class="label">聊天</span></button>
-      <button class="nav-btn" onclick="switchView('knowledge', this)"><span class="icon">📚</span><span class="label">知识库</span></button>
-      <button class="nav-btn" onclick="switchView('video', this)"><span class="icon">🎬</span><span class="label">视频</span></button>
-      <button class="nav-btn" onclick="switchView('tools', this)"><span class="icon">🔧</span><span class="label">工具</span></button>
-      <button class="nav-btn" onclick="switchView('tasks', this)"><span class="icon">📋</span><span class="label">任务</span></button>
-      <button class="nav-btn" onclick="switchView('skills', this)"><span class="icon">🛠️</span><span class="label">技能</span></button>
+      <button class="nav-btn active" onclick="switchView('chat', this)"><span class="icon">馃挰</span><span class="label">鑱婂ぉ</span></button>
+      <button class="nav-btn" onclick="switchView('knowledge', this)"><span class="icon">馃摎</span><span class="label">鐭ヨ瘑搴?/span></button>
+      <button class="nav-btn" onclick="switchView('tools', this)"><span class="icon">馃敡</span><span class="label">宸ュ叿</span></button>
+      <button class="nav-btn" onclick="switchView('tasks', this)"><span class="icon">馃搵</span><span class="label">浠诲姟</span></button>
+      <button class="nav-btn" onclick="switchView('skills', this)"><span class="icon">馃洜锔?/span><span class="label">鎶€鑳?/span></button>
     </div>
     <div class="nav-bottom">
-      <button class="nav-btn small" onclick="toggleSettings()"><span class="icon">⚙️</span><span class="label">设置</span></button>
-      <button class="nav-btn small" onclick="clearChat()"><span class="icon">🗑️</span><span class="label">清空对话</span></button>
+      <button class="nav-btn small" onclick="toggleSettings()"><span class="icon">鈿欙笍</span><span class="label">璁剧疆</span></button>
+      <button class="nav-btn small" onclick="clearChat()"><span class="icon">馃棏锔?/span><span class="label">娓呯┖瀵硅瘽</span></button>
     </div>
   </div>
   <div class="chat-panel">
-    <!-- 聊天视图 -->
+    <!-- 鑱婂ぉ瑙嗗浘 -->
     <div id="view-chat" class="view-panel active">
       <div class="messages" id="messages">
         <div class="welcome-msg" id="welcomeMsg">
-          <h2>欢迎使用 Yicalw</h2>
-          <p>AI 智能体 · 你的本地助手</p>
-          <p style="margin-top:16px;font-size:12px">点击左侧底部 ⚙️ 配置 API 后即可开始对话</p>
+          <h2>娆㈣繋浣跨敤 Yicalw</h2>
+          <p>AI 鏅鸿兘浣?路 浣犵殑鏈湴鍔╂墜</p>
+          <p style="margin-top:16px;font-size:12px">鐐瑰嚮宸︿晶搴曢儴 鈿欙笍 閰嶇疆 API 鍚庡嵆鍙紑濮嬪璇?/p>
         </div>
       </div>
       <div class="status-indicator" id="statusIndicator">
         <div class="status-dot"></div>
         <div style="flex:1;min-width:0">
-          <span class="status-text" id="statusText">小奕正在思考...</span>
-          <div class="status-details" id="statusDetails" style="font-size:11px;color:#8b949e;margin-top:4px;max-height:40px;overflow-y:auto">正在分析你的问题</div>
+          <span class="status-text" id="statusText">灏忓姝ｅ湪鎬濊€?..</span>
+          <div class="status-details" id="statusDetails" style="font-size:11px;color:#8b949e;margin-top:4px;max-height:40px;overflow-y:auto">姝ｅ湪鍒嗘瀽浣犵殑闂</div>
         </div>
-        <span class="status-type" id="statusType">思考中</span>
+        <span class="status-type" id="statusType">鎬濊€冧腑</span>
       </div>
       <div class="input-area">
-        <textarea id="input" placeholder="输入消息..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
-        <button onclick="sendMessage()" id="sendBtn">发送</button>
-        <button onclick="stopGeneration()" id="stopBtn" style="display:none;background:#da3633;color:#fff;border:none;border-radius:8px;padding:0 16px;cursor:pointer;font-size:14px">停止</button>
+        <textarea id="input" placeholder="杈撳叆娑堟伅..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+        <button onclick="sendMessage()" id="sendBtn">鍙戦€?/button>
+        <button onclick="stopGeneration()" id="stopBtn" style="display:none;background:#da3633;color:#fff;border:none;border-radius:8px;padding:0 16px;cursor:pointer;font-size:14px">鍋滄</button>
       </div>
     </div>
-    <!-- 知识库视图 -->
+    <!-- 鐭ヨ瘑搴撹鍥?-->
     <div id="view-knowledge" class="view-panel">
       <div class="skills-panel-header">
-        <h2>📚 知识库</h2>
+        <h2>馃摎 鐭ヨ瘑搴?/h2>
       </div>
       <div class="skill-empty">
-        <div class="icon">📚</div>
-        <p>知识库功能开发中...</p>
+        <div class="icon">馃摎</div>
+        <p>鐭ヨ瘑搴撳姛鑳藉紑鍙戜腑...</p>
       </div>
     </div>
-    <!-- 视频生成视图 -->
-    <div id="view-video" class="view-panel" style="display:none">
-      <div class="chat-container" id="videoChatContainer">
-        <div class="messages" id="videoMessages">
-          <div class="welcome-msg">
-            <h2>🎬 视频生成</h2>
-            <p style="font-size:13px;color:#8b949e;margin-top:8px">输入视频描述，生成后将返回视频URL。<br>视频API模型请在设置中单独配置。</p>
-          </div>
-        </div>
-        <div class="input-area">
-          <textarea id="videoInput" placeholder="描述你想要的视频，例如：夕阳下的海边，波浪轻轻拍打沙滩..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendVideoMessage()}"></textarea>
-          <button onclick="sendVideoMessage()" id="videoSendBtn">生成视频</button>
-        </div>
-      </div>
-    </div>
-    <!-- 工具视图 -->
+    <!-- 宸ュ叿瑙嗗浘 -->
     <div id="view-tools" class="view-panel">
       <div class="skills-panel-header">
-        <h2>🔧 工具</h2>
+        <h2>馃敡 宸ュ叿</h2>
       </div>
       <div class="skill-empty">
-        <div class="icon">🔧</div>
-        <p>工具面板功能开发中...</p>
+        <div class="icon">馃敡</div>
+        <p>宸ュ叿闈㈡澘鍔熻兘寮€鍙戜腑...</p>
       </div>
     </div>
-    <!-- 任务视图 -->
+    <!-- 浠诲姟瑙嗗浘 -->
     <div id="view-tasks" class="view-panel">
       <div class="skills-panel-header">
-        <h2>📋 任务管理</h2>
+        <h2>馃搵 浠诲姟绠＄悊</h2>
       </div>
       <div style="flex:1;overflow-y:auto;padding:8px" id="taskListMain">
-        <div class="skill-empty"><p>加载中...</p></div>
+        <div class="skill-empty"><p>鍔犺浇涓?..</p></div>
       </div>
     </div>
-    <!-- 技能管理视图 -->
+    <!-- 鎶€鑳界鐞嗚鍥?-->
     <div id="view-skills" class="view-panel">
       <div class="skills-panel-header">
-        <h2>🛠️ 技能管理</h2>
-        <button class="btn-generate" onclick="showGenerateForm()">✨ 生成新技能</button>
+        <h2>馃洜锔?鎶€鑳界鐞?/h2>
+        <button class="btn-generate" onclick="showGenerateForm()">鉁?鐢熸垚鏂版妧鑳?/button>
       </div>
       <div id="generateFormArea"></div>
-      <div class="skills-list" id="skillsList">加载中...</div>
+      <div class="skills-list" id="skillsList">鍔犺浇涓?..</div>
     </div>
   </div>
   <div class="sidebar">
     <div class="section">
-      <h3>📋 定时任务</h3>
-      <div id="taskList"><div class="item" style="color:#8b949e;text-align:center;">加载中...</div></div>
+      <h3>馃搵 瀹氭椂浠诲姟</h3>
+      <div id="taskList"><div class="item" style="color:#8b949e;text-align:center;">鍔犺浇涓?..</div></div>
     </div>
     <div class="section">
-      <h3>📊 状态</h3>
+      <h3>馃搳 鐘舵€?/h3>
       <div id="statusInfo" style="font-size:12px;color:#8b949e;"></div>
     </div>
   </div>
@@ -249,16 +233,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',s
 
 <div class="overlay" id="settingsOverlay" style="display:none">
   <div class="settings-panel">
-    <h2>⚙️ 配置 API</h2>
-    <label>API 地址</label>
+    <h2>鈿欙笍 閰嶇疆 API</h2>
+    <label>API 鍦板潃</label>
     <input type="text" id="cfgApiUrl" placeholder="https://api.openai.com/v1">
     <label>API Key</label>
     <input type="password" id="cfgApiKey" placeholder="sk-...">
-    <label>模型名称</label>
+    <label>妯″瀷鍚嶇О</label>
     <input type="text" id="cfgModel" placeholder="qwen-plus">
-    <button class="save-btn" onclick="saveSettings()">保存配置</button>
-    <button class="save-btn" style="background:#da3633;margin-top:8px" onclick="testApi()">测试 API</button>
-    <button class="save-btn" style="background:#30363d;margin-top:8px" onclick="cancelSettings()">取消</button>
+    <button class="save-btn" onclick="saveSettings()">淇濆瓨閰嶇疆</button>
+    <button class="save-btn" style="background:#da3633;margin-top:8px" onclick="testApi()">娴嬭瘯 API</button>
+    <button class="save-btn" style="background:#30363d;margin-top:8px" onclick="cancelSettings()">鍙栨秷</button>
     <div class="saved-msg" id="savedMsg"></div>
   </div>
 </div>
@@ -266,11 +250,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',s
 <!-- Skill Detail Modal -->
 <div class="skill-detail-overlay" id="skillDetailOverlay" onclick="if(event.target===this)closeSkillDetail()">
   <div class="skill-detail-panel">
-    <h3 id="skillDetailTitle">技能详情</h3>
+    <h3 id="skillDetailTitle">鎶€鑳借鎯?/h3>
     <div class="detail-body" id="skillDetailBody"></div>
     <div class="detail-footer">
-      <button style="background:#30363d;color:#c9d1d9" onclick="closeSkillDetail()">关闭</button>
-      <button style="background:#da3633;color:#fff" onclick="deleteSkillFromDetail()">删除技能</button>
+      <button style="background:#30363d;color:#c9d1d9" onclick="closeSkillDetail()">鍏抽棴</button>
+      <button style="background:#da3633;color:#fff" onclick="deleteSkillFromDetail()">鍒犻櫎鎶€鑳?/button>
     </div>
   </div>
 </div>
@@ -317,7 +301,7 @@ function showTyping(status = 'thinking', details = '') {
   const dot = document.getElementById('statusDot');
   if(dot) { dot.classList.add('thinking'); dot.style.background = '#d29922'; }
   const statusText = document.getElementById('agentStatus');
-  if(statusText) statusText.textContent = status === 'executing' ? '执行中...' : '思考中...';
+  if(statusText) statusText.textContent = status === 'executing' ? '鎵ц涓?..' : '鎬濊€冧腑...';
   
   // Update status indicator above input
   const indicator = document.getElementById('statusIndicator');
@@ -326,8 +310,8 @@ function showTyping(status = 'thinking', details = '') {
   const statusDetailsEl = document.getElementById('statusDetails');
   if(indicator && statusTextEl && statusTypeEl) {
     indicator.classList.add('active');
-    statusTextEl.textContent = status === 'executing' ? '小奕正在执行任务...' : '小奕正在思考...';
-    statusTypeEl.textContent = status === 'executing' ? '执行中' : '思考中';
+    statusTextEl.textContent = status === 'executing' ? '灏忓姝ｅ湪鎵ц浠诲姟...' : '灏忓姝ｅ湪鎬濊€?..';
+    statusTypeEl.textContent = status === 'executing' ? '鎵ц涓? : '鎬濊€冧腑';
     if(statusDetailsEl && details) {
       statusDetailsEl.textContent = details;
       statusDetailsEl.style.display = 'block';
@@ -342,7 +326,7 @@ function showTyping(status = 'thinking', details = '') {
   const div = document.createElement('div');
   div.id = 'typingIndicator';
   div.className = 'typing';
-  div.textContent = status === 'executing' ? '🔧 执行任务中...' : '⚡ 思考中...';
+  div.textContent = status === 'executing' ? '馃敡 鎵ц浠诲姟涓?..' : '鈿?鎬濊€冧腑...';
   messagesDiv.appendChild(div);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
@@ -355,7 +339,7 @@ function hideTyping() {
   const dot = document.getElementById('statusDot');
   if(dot) { dot.classList.remove('thinking'); dot.style.background = '#3fb950'; }
   const statusText = document.getElementById('agentStatus');
-  if(statusText) statusText.textContent = '在线 · 随时待命';
+  if(statusText) statusText.textContent = '鍦ㄧ嚎 路 闅忔椂寰呭懡';
   
   // Hide status indicator
   const indicator = document.getElementById('statusIndicator');
@@ -397,10 +381,10 @@ async function sendMessage() {
     addMessage('assistant', data.result, true);
   } catch(e) {
     if(e.name === 'AbortError') {
-      addMessage('system', '⏹️ 已停止生成');
+      addMessage('system', '鈴癸笍 宸插仠姝㈢敓鎴?);
     } else {
       hideTyping();
-      addMessage('assistant', `❌ 请求失败: ${e.message}`, true);
+      addMessage('assistant', `鉂?璇锋眰澶辫触: ${e.message}`, true);
     }
   }
   sendBtn.disabled = false;
@@ -452,7 +436,7 @@ async function saveSettings() {
     localStorage.setItem('yicalw_model', model);
   }
   const msg = document.getElementById('savedMsg');
-  msg.textContent = '✅ 配置已保存！关闭弹窗即可使用';
+  msg.textContent = '鉁?閰嶇疆宸蹭繚瀛橈紒鍏抽棴寮圭獥鍗冲彲浣跨敤';
   setTimeout(()=>{ msg.textContent=''; document.getElementById('settingsOverlay').style.display='none'; }, 1500);
 }
 
@@ -485,13 +469,13 @@ function switchView(viewName, btn) {
 }
 
 function clearChat() {
-  if(!confirm('确定要清空对话历史吗？')) return;
+  if(!confirm('纭畾瑕佹竻绌哄璇濆巻鍙插悧锛?)) return;
   try { fetch('/api/clear', {method:'POST'}); } catch(e) {}
   messagesDiv.innerHTML = '';
   const w = document.createElement('div');
   w.className = 'welcome-msg';
   w.id = 'welcomeMsg';
-  w.innerHTML = '<h2>欢迎使用 Yicalw</h2><p>AI 智能体 · 你的本地助手</p><p style="margin-top:16px;font-size:12px">点击左侧底部 ⚙️ 配置 API 后即可开始对话</p>';
+  w.innerHTML = '<h2>娆㈣繋浣跨敤 Yicalw</h2><p>AI 鏅鸿兘浣?路 浣犵殑鏈湴鍔╂墜</p><p style="margin-top:16px;font-size:12px">鐐瑰嚮宸︿晶搴曢儴 鈿欙笍 閰嶇疆 API 鍚庡嵆鍙紑濮嬪璇?/p>';
   messagesDiv.appendChild(w);
 }
 
@@ -509,9 +493,9 @@ async function testApi() {
   const apiUrl = document.getElementById('cfgApiUrl').value.trim();
   const msg = document.getElementById('savedMsg');
   
-  if(!apiKey) { msg.textContent='❌ 请先填写 API Key'; return; }
+  if(!apiKey) { msg.textContent='鉂?璇峰厛濉啓 API Key'; return; }
   
-  msg.textContent = '⏳ 正在测试 API 连接...';
+  msg.textContent = '鈴?姝ｅ湪娴嬭瘯 API 杩炴帴...';
   
   try {
     const baseUrl = apiUrl || 'https://api.openai.com/v1';
@@ -526,21 +510,21 @@ async function testApi() {
     if(resp.ok) {
       const data = await resp.json();
       if(data.data && data.data.length > 0) {
-        msg.textContent = '✅ API 可用！找到 ' + data.data.length + ' 个模型';
+        msg.textContent = '鉁?API 鍙敤锛佹壘鍒?' + data.data.length + ' 涓ā鍨?;
       } else {
-        msg.textContent = '⚠️ API 连接成功，但未找到模型';
+        msg.textContent = '鈿狅笍 API 杩炴帴鎴愬姛锛屼絾鏈壘鍒版ā鍨?;
       }
     } else {
       const errorData = await resp.json().catch(() => ({}));
-      msg.textContent = '❌ API 测试失败: ' + resp.status + ' ' + (errorData.error?.message || resp.statusText);
+      msg.textContent = '鉂?API 娴嬭瘯澶辫触: ' + resp.status + ' ' + (errorData.error?.message || resp.statusText);
     }
   } catch(e) {
-    msg.textContent = '❌ 网络错误: ' + e.message;
+    msg.textContent = '鉂?缃戠粶閿欒: ' + e.message;
   }
 }
 
-socket.on('tool_start', (data) => addSystemMessage('🔧 执行: '+data.tool));
-socket.on('tool_result', (data) => addSystemMessage('✅ '+data.tool+': '+data.result.substring(0,100)));
+socket.on('tool_start', (data) => addSystemMessage('馃敡 鎵ц: '+data.tool));
+socket.on('tool_result', (data) => addSystemMessage('鉁?'+data.tool+': '+data.result.substring(0,100)));
 socket.on('thinking_step', (data) => {
   const statusDetails = document.getElementById('statusDetails');
   if(statusDetails) {
@@ -549,7 +533,7 @@ socket.on('thinking_step', (data) => {
   }
 });
 socket.on('response', (data) => { hideTyping(); addMessage('assistant', data.message, true); });
-socket.on('error', (data) => { hideTyping(); addMessage('assistant', '❌ '+data.error, true); });
+socket.on('error', (data) => { hideTyping(); addMessage('assistant', '鉂?'+data.error, true); });
 
 // ===== Skills Management =====
 async function loadSkills() {
@@ -558,26 +542,26 @@ async function loadSkills() {
     const skills = await resp.json();
     const container = document.getElementById('skillsList');
     if(skills.length === 0) {
-      container.innerHTML = '<div class="skill-empty"><div class="icon">🛠️</div><p>还没有技能<br>点击下方按钮让小奕为你生成，或手动创建</p></div>';
+      container.innerHTML = '<div class="skill-empty"><div class="icon">馃洜锔?/div><p>杩樻病鏈夋妧鑳?br>鐐瑰嚮涓嬫柟鎸夐挳璁╁皬濂曚负浣犵敓鎴愶紝鎴栨墜鍔ㄥ垱寤?/p></div>';
       return;
     }
     container.innerHTML = skills.map(s => `
       <div class="skill-card" onclick="viewSkill('${s.id}')">
         <div class="skill-header">
           <span class="skill-name">${escapeHtml(s.name)}</span>
-          <span class="skill-tag">${s.created ? new Date(s.created).toLocaleDateString('zh-CN') : '未知'}</span>
+          <span class="skill-tag">${s.created ? new Date(s.created).toLocaleDateString('zh-CN') : '鏈煡'}</span>
         </div>
-        <div class="skill-desc">${escapeHtml(s.description || '暂无描述')}</div>
+        <div class="skill-desc">${escapeHtml(s.description || '鏆傛棤鎻忚堪')}</div>
         <div class="skill-meta">
           <div class="skill-actions" onclick="event.stopPropagation()">
-            <button onclick="viewSkill('${s.id}')">查看</button>
-            <button class="delete" onclick="deleteSkill('${s.id}')">删除</button>
+            <button onclick="viewSkill('${s.id}')">鏌ョ湅</button>
+            <button class="delete" onclick="deleteSkill('${s.id}')">鍒犻櫎</button>
           </div>
         </div>
       </div>
     `).join('');
   } catch(e) {
-    document.getElementById('skillsList').innerHTML = '<div class="skill-empty"><p>加载失败</p></div>';
+    document.getElementById('skillsList').innerHTML = '<div class="skill-empty"><p>鍔犺浇澶辫触</p></div>';
   }
 }
 
@@ -585,11 +569,11 @@ function showGenerateForm() {
   const area = document.getElementById('generateFormArea');
   area.innerHTML = `
     <div class="generate-form">
-      <label>描述你想要的技能（越详细越好）</label>
-      <textarea id="skillDesc" placeholder="例如：一个可以查询天气的技能，支持输入城市名返回当前天气"></textarea>
+      <label>鎻忚堪浣犳兂瑕佺殑鎶€鑳斤紙瓒婅缁嗚秺濂斤級</label>
+      <textarea id="skillDesc" placeholder="渚嬪锛氫竴涓彲浠ユ煡璇㈠ぉ姘旂殑鎶€鑳斤紝鏀寔杈撳叆鍩庡競鍚嶈繑鍥炲綋鍓嶅ぉ姘?></textarea>
       <div class="gen-actions">
-        <button style="background:#30363d;color:#c9d1d9;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px" onclick="hideGenerateForm()">取消</button>
-        <button class="btn-generate" id="btnGenSkill" onclick="generateSkill()">✨ 让小奕生成</button>
+        <button style="background:#30363d;color:#c9d1d9;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px" onclick="hideGenerateForm()">鍙栨秷</button>
+        <button class="btn-generate" id="btnGenSkill" onclick="generateSkill()">鉁?璁╁皬濂曠敓鎴?/button>
       </div>
     </div>
   `;
@@ -601,11 +585,11 @@ function hideGenerateForm() {
 
 async function generateSkill() {
   const desc = document.getElementById('skillDesc').value.trim();
-  if(!desc) { alert('请输入技能描述'); return; }
+  if(!desc) { alert('璇疯緭鍏ユ妧鑳芥弿杩?); return; }
   
   const btn = document.getElementById('btnGenSkill');
   btn.disabled = true;
-  btn.textContent = '⏳ 生成中...';
+  btn.textContent = '鈴?鐢熸垚涓?..';
   
   try {
     const resp = await fetch('/api/skills/generate', {
@@ -617,15 +601,15 @@ async function generateSkill() {
     if(data.success) {
       hideGenerateForm();
       loadSkills();
-      alert('✅ 技能生成成功！');
+      alert('鉁?鎶€鑳界敓鎴愭垚鍔燂紒');
     } else {
-      alert('❌ 生成失败: ' + data.error);
+      alert('鉂?鐢熸垚澶辫触: ' + data.error);
     }
   } catch(e) {
-    alert('❌ 请求失败: ' + e.message);
+    alert('鉂?璇锋眰澶辫触: ' + e.message);
   }
   btn.disabled = false;
-  btn.textContent = '✨ 让小奕生成';
+  btn.textContent = '鉁?璁╁皬濂曠敓鎴?;
 }
 
 async function viewSkill(id) {
@@ -634,10 +618,10 @@ async function viewSkill(id) {
     const skill = await resp.json();
     currentSkillId = id;
     document.getElementById('skillDetailTitle').textContent = skill.name;
-    document.getElementById('skillDetailBody').textContent = skill.content || '(无内容)';
+    document.getElementById('skillDetailBody').textContent = skill.content || '(鏃犲唴瀹?';
     document.getElementById('skillDetailOverlay').classList.add('active');
   } catch(e) {
-    alert('加载失败: ' + e.message);
+    alert('鍔犺浇澶辫触: ' + e.message);
   }
 }
 
@@ -648,23 +632,23 @@ function closeSkillDetail() {
 
 async function deleteSkillFromDetail() {
   if(!currentSkillId) return;
-  if(!confirm('确定要删除技能 "' + currentSkillId + '" 吗？')) return;
+  if(!confirm('纭畾瑕佸垹闄ゆ妧鑳?"' + currentSkillId + '" 鍚楋紵')) return;
   try {
     await fetch('/api/skills/' + currentSkillId, {method: 'DELETE'});
     closeSkillDetail();
     loadSkills();
   } catch(e) {
-    alert('删除失败: ' + e.message);
+    alert('鍒犻櫎澶辫触: ' + e.message);
   }
 }
 
 async function deleteSkill(id) {
-  if(!confirm('确定要删除这个技能吗？')) return;
+  if(!confirm('纭畾瑕佸垹闄よ繖涓妧鑳藉悧锛?)) return;
   try {
     await fetch('/api/skills/' + id, {method: 'DELETE'});
     loadSkills();
   } catch(e) {
-    alert('删除失败: ' + e.message);
+    alert('鍒犻櫎澶辫触: ' + e.message);
   }
 }
 
@@ -674,12 +658,12 @@ async function loadMainTasks() {
     const tasks = await resp.json();
     const container = document.getElementById('taskListMain');
     if(tasks.length===0) { 
-      container.innerHTML='<div class="skill-empty"><div class="icon">📋</div><p>暂无定时任务</p></div>';
+      container.innerHTML='<div class="skill-empty"><div class="icon">馃搵</div><p>鏆傛棤瀹氭椂浠诲姟</p></div>';
       return; 
     }
-    container.innerHTML = tasks.map(t=>'<div class="task-item '+t.status+'" style="font-size:12px;padding:8px;background:#0d1117;border-radius:6px;margin-bottom:6px;border-left:3px solid #58a6ff"><div>'+escapeHtml(t.intent.substring(0,50))+'</div><div class="task-id">'+t.id+' · '+new Date(t.executeAt).toLocaleString('zh-CN')+'</div><button class="btn-sm" onclick="deleteTask(\''+t.id+'\');loadMainTasks()">删除</button></div>').join('');
+    container.innerHTML = tasks.map(t=>'<div class="task-item '+t.status+'" style="font-size:12px;padding:8px;background:#0d1117;border-radius:6px;margin-bottom:6px;border-left:3px solid #58a6ff"><div>'+escapeHtml(t.intent.substring(0,50))+'</div><div class="task-id">'+t.id+' 路 '+new Date(t.executeAt).toLocaleString('zh-CN')+'</div><button class="btn-sm" onclick="deleteTask(\''+t.id+'\');loadMainTasks()">鍒犻櫎</button></div>').join('');
   } catch(e) {
-    document.getElementById('taskListMain').innerHTML = '<div class="skill-empty"><p>加载失败</p></div>';
+    document.getElementById('taskListMain').innerHTML = '<div class="skill-empty"><p>鍔犺浇澶辫触</p></div>';
   }
 }
 
@@ -688,8 +672,8 @@ async function loadTasks() {
     const resp = await fetch('/api/tasks');
     const tasks = await resp.json();
     const container = document.getElementById('taskList');
-    if(tasks.length===0) { container.innerHTML='<div class="item" style="color:#8b949e;text-align:center;">暂无任务</div>'; return; }
-    container.innerHTML = tasks.map(t=>'<div class="task-item '+t.status+'"><div>'+escapeHtml(t.intent.substring(0,50))+'</div><div class="task-id">'+t.id+' · '+new Date(t.executeAt).toLocaleString('zh-CN')+'</div><button class="btn-sm" onclick="deleteTask(\''+t.id+'\')">删除</button></div>').join('');
+    if(tasks.length===0) { container.innerHTML='<div class="item" style="color:#8b949e;text-align:center;">鏆傛棤浠诲姟</div>'; return; }
+    container.innerHTML = tasks.map(t=>'<div class="task-item '+t.status+'"><div>'+escapeHtml(t.intent.substring(0,50))+'</div><div class="task-id">'+t.id+' 路 '+new Date(t.executeAt).toLocaleString('zh-CN')+'</div><button class="btn-sm" onclick="deleteTask(\''+t.id+'\')">鍒犻櫎</button></div>').join('');
   } catch(e) {}
 }
 
@@ -697,334 +681,4 @@ async function deleteTask(id) {
   try { await fetch('/api/tasks/'+id, {method:'DELETE'}); loadTasks(); } catch(e) {}
 }
 
-// ===== 视频生成功能 =====
-
-// ===== 前端本地视频生成（Canvas + MediaRecorder）=====
-let canvas, ctx, mediaRecorder, recordedChunks = [];
-let animationId = null;
-let currentBlob = null;
-
-function initCanvas() {
-  canvas = document.getElementById('videoCanvas');
-  ctx = canvas.getContext('2d');
-  canvas.width = 640;
-  canvas.height = 360;
-}
-
-// 根据提示词生成颜色主题
-function getThemeFromPrompt(prompt) {
-  const lower = prompt.toLowerCase();
-  if (lower.includes('海') || lower.includes('洋') || lower.includes('波') || lower.includes('蓝')) {
-    return { bg1: '#001a33', bg2: '#003366', accent: '#00aaff', particles: ['#00ddff', '#0088cc', '#0066aa'] };
-  }
-  if (lower.includes('日') || lower.includes('夕') || lower.includes('阳') || lower.includes('橙') || lower.includes('红')) {
-    return { bg1: '#1a0a00', bg2: '#663300', accent: '#ff6600', particles: ['#ffaa00', '#ff4400', '#cc3300'] };
-  }
-  if (lower.includes('夜') || lower.includes('星') || lower.includes('月') || lower.includes('黑')) {
-    return { bg1: '#000011', bg2: '#000033', accent: '#6666ff', particles: ['#8888ff', '#aaaaFF', '#ffffff'] };
-  }
-  if (lower.includes('森') || lower.includes('林') || lower.includes('绿') || lower.includes('草')) {
-    return { bg1: '#001a00', bg2: '#003300', accent: '#00cc44', particles: ['#22ff55', '#00aa33', '#44dd66'] };
-  }
-  if (lower.includes('雪') || lower.includes('冰') || lower.includes('白') || lower.includes('冬')) {
-    return { bg1: '#111122', bg2: '#334466', accent: '#aaccff', particles: ['#ffffff', '#ddeeff', '#bbddff'] };
-  }
-  if (lower.includes('花') || lower.includes('粉') || lower.includes('春')) {
-    return { bg1: '#1a0011', bg2: '#330022', accent: '#ff66aa', particles: ['#ff88cc', '#ff4488', '#ffaadd'] };
-  }
-  // 默认渐变
-  return { bg1: '#0a0a1a', bg2: '#1a1a3a', accent: '#58a6ff', particles: ['#58a6ff', '#3fb950', '#f0883e'] };
-}
-
-// 粒子类
-class Particle {
-  constructor(canvas, theme, style) {
-    this.reset(canvas, theme, style);
-  }
-  reset(canvas, theme, style) {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 4 + 1;
-    this.speedX = (Math.random() - 0.5) * 2;
-    this.speedY = (Math.random() - 0.5) * 2;
-    this.opacity = Math.random() * 0.8 + 0.2;
-    this.color = theme.particles[Math.floor(Math.random() * theme.particles.length)];
-    this.life = Math.random() * 100 + 50;
-    this.maxLife = this.life;
-    this.style = style;
-  }
-  update(canvas) {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    this.life--;
-    this.opacity = (this.life / this.maxLife) * 0.8 + 0.2;
-    if (this.life <= 0 || this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-      this.reset(canvas, { particles: this.color ? [this.color] : ['#58a6ff'] }, this.style);
-    }
-  }
-  draw(ctx) {
-    ctx.globalAlpha = this.opacity;
-    ctx.fillStyle = this.color;
-    if (this.style === 'circle') {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    } else if (this.style === 'rect') {
-      ctx.fillRect(this.x, this.y, this.size * 2, this.size * 2);
-    } else {
-      ctx.beginPath();
-      ctx.moveTo(this.x, this.y - this.size);
-      ctx.lineTo(this.x + this.size, this.y + this.size);
-      ctx.lineTo(this.x - this.size, this.y + this.size);
-      ctx.closePath();
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-  }
-}
-
-// 波浪类
-class Wave {
-  constructor(canvas, theme) {
-    this.canvas = canvas;
-    this.theme = theme;
-    this.offset = 0;
-    this.amplitude = 20;
-    this.frequency = 0.02;
-  }
-  update() {
-    this.offset += 0.03;
-  }
-  draw(ctx) {
-    ctx.beginPath();
-    ctx.moveTo(0, this.canvas.height);
-    for (let x = 0; x <= this.canvas.width; x += 5) {
-      const y = this.canvas.height * 0.6 + Math.sin(x * this.frequency + this.offset) * this.amplitude;
-      ctx.lineTo(x, y);
-    }
-    ctx.lineTo(this.canvas.width, this.canvas.height);
-    ctx.closePath();
-    ctx.fillStyle = this.theme.accent + '40';
-    ctx.fill();
-  }
-}
-
-// 几何图形动画
-function drawGeometric(ctx, canvas, time, theme) {
-  const cx = canvas.width / 2;
-  const cy = canvas.height / 2;
-  ctx.strokeStyle = theme.accent;
-  ctx.lineWidth = 2;
-  for (let i = 0; i < 5; i++) {
-    const radius = 30 + i * 25 + Math.sin(time * 0.001 + i) * 10;
-    ctx.beginPath();
-    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-    ctx.stroke();
-  }
-}
-
-// 主渲染循环
-function renderFrame(timestamp, particles, waves, style, theme) {
-  const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0, theme.bg1);
-  gradient.addColorStop(1, theme.bg2);
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  // 绘制几何背景
-  if (style === 'geometric') {
-    drawGeometric(ctx, canvas, timestamp, theme);
-  }
-
-  // 绘制波浪
-  waves.forEach(wave => {
-    wave.update();
-    wave.draw(ctx);
-  });
-
-  // 绘制粒子
-  particles.forEach(p => {
-    p.update(canvas);
-    p.draw(ctx);
-  });
-
-  // 文字提示
-  ctx.globalAlpha = 0.3;
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '14px sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('Yicalw 本地视频生成', canvas.width / 2, canvas.height - 20);
-  ctx.globalAlpha = 1;
-}
-
-// 开始生成
-async function startVideoGenerate() {
-  const prompt = document.getElementById('videoPrompt').value.trim();
-  const duration = parseInt(document.getElementById('videoDuration').value);
-  const style = document.getElementById('videoStyle').value;
-  
-  if (!prompt) {
-    alert('请输入视频描述');
-    return;
-  }
-  
-  const btn = document.getElementById('videoGenBtn');
-  btn.disabled = true;
-  btn.textContent = '⏳ 生成中...';
-  
-  document.getElementById('videoPreviewArea').style.display = 'block';
-  document.getElementById('videoResultArea').style.display = 'none';
-  
-  const theme = getThemeFromPrompt(prompt);
-  initCanvas();
-  
-  // 创建粒子和波浪
-  const particles = [];
-  for (let i = 0; i < 50; i++) {
-    particles.push(new Particle(canvas, theme, style));
-  }
-  const waves = [new Wave(canvas, theme)];
-  
-  // 设置MediaRecorder
-  const stream = canvas.captureStream(30); // 30fps
-  recordedChunks = [];
-  
-  let mimeType = 'video/webm;codecs=vp9';
-  if (!MediaRecorder.isTypeSupported(mimeType)) {
-    mimeType = 'video/webm';
-  }
-  
-  const recorder = new MediaRecorder(stream, {
-    mimeType: mimeType,
-    videoBitsPerSecond: 2500000
-  });
-  
-  recorder.ondataavailable = (e) => {
-    if (e.data.size > 0) {
-      recordedChunks.push(e.data);
-    }
-  };
-  
-  recorder.onstop = () => {
-    const blob = new Blob(recordedChunks, { type: mimeType });
-    currentBlob = blob;
-    const url = URL.createObjectURL(blob);
-    
-    const videoEl = document.getElementById('resultVideo');
-    videoEl.src = url;
-    
-    document.getElementById('videoPreviewArea').style.display = 'none';
-    document.getElementById('videoResultArea').style.display = 'block';
-    
-    btn.disabled = false;
-    btn.textContent = '🎬 开始生成';
-    
-    cancelAnimationFrame(animationId);
-  };
-  
-  recorder.start();
-  
-  // 动画循环
-  let startTime = performance.now();
-  const endTime = startTime + duration * 1000;
-  
-  function animate(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min((elapsed / (endTime - startTime)) * 100, 100);
-    
-    document.getElementById('videoProgressBar').style.width = progress + '%';
-    document.getElementById('videoProgressText').textContent = Math.round(progress) + '%';
-    document.getElementById('videoStatusText').textContent = '正在渲染帧... (' + Math.round(progress) + '%)';
-    
-    renderFrame(now, particles, waves, style, theme);
-    
-    if (now < endTime) {
-      animationId = requestAnimationFrame(animate);
-    } else {
-      recorder.stop();
-    }
-  }
-  
-  animationId = requestAnimationFrame(animate);
-}
-
-// 下载视频
-function downloadVideo() {
-  if (!currentBlob) return;
-  const url = URL.createObjectURL(currentBlob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'yicalw_video_' + Date.now() + '.webm';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
-// 重置
-function resetVideoGen() {
-  document.getElementById('videoPreviewArea').style.display = 'none';
-  document.getElementById('videoResultArea').style.display = 'none';
-  document.getElementById('videoPrompt').value = '';
-  document.getElementById('videoProgressBar').style.width = '0%';
-  document.getElementById('videoProgressText').textContent = '0%';
-  document.getElementById('videoStatusText').textContent = '准备中...';
-}
-
-// ===== 视频生成聊天功能 =====
-async function sendVideoMessage() {
-  const input = document.getElementById('videoInput');
-  const message = input.value.trim();
-  if (!message) return;
-  
-  // 添加用户消息
-  addVideoMessage('user', message);
-  input.value = '';
-  input.style.height = 'auto';
-  
-  // 显示思考状态
-  const typingDiv = document.createElement('div');
-  typingDiv.className = 'message assistant-message typing';
-  typingDiv.innerHTML = '⚡ 思考中...';
-  document.getElementById('videoMessages').appendChild(typingDiv);
-  scrollVideoMessages();
-  
-  try {
-    // 发送到后端
-    const resp = await fetch('/api/video-generate', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ message })
-    });
-    const data = await resp.json();
-    
-    // 移除思考状态
-    typingDiv.remove();
-    
-    // 添加助手回复
-    addVideoMessage('assistant', data.result || '视频生成请求已处理');
-  } catch(e) {
-    typingDiv.remove();
-    addVideoMessage('assistant', '❌ 请求失败: ' + e.message);
-  }
-}
-
-function addVideoMessage(type, text) {
-  const messagesDiv = document.getElementById('videoMessages');
-  const msgDiv = document.createElement('div');
-  msgDiv.className = type === 'user' ? 'message user-message' : 'message assistant-message';
-  msgDiv.innerHTML = `<div class="message-content">${escapeHtml(text)}</div>`;
-  messagesDiv.appendChild(msgDiv);
-  scrollVideoMessages();
-}
-
-function scrollVideoMessages() {
-  const container = document.getElementById('videoChatContainer');
-  if(container) container.scrollTop = container.scrollHeight;
-}
-
-loadTasks();
-setInterval(loadTasks, 10000);
-</script>
-</body>
 </html>

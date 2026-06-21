@@ -127,84 +127,7 @@ function start(port = 5050) {
     res.json({ result });
   });
 
-  // ===== 视频生成 API =====
-  // 创建视频生成任务
-  app.post('/api/video/generate', async (req, res) => {
-    try {
-      const { prompt, duration, ratio, model_id } = req.body;
-      if (!prompt) {
-        return res.status(400).json({ success: false, error: '缺少视频描述' });
-      }
-      
-      const videoGen = require('./video-generator');
-      const result = videoGen.createTask(prompt, { duration, ratio, modelId: model_id });
-      
-      res.json(result);
-    } catch (e) {
-      console.error('[Server] 视频生成失败:', e);
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
 
-  // 查询视频任务进度
-  app.get('/api/video/:taskId', (req, res) => {
-    try {
-      const videoGen = require('./video-generator');
-      const result = videoGen.getProgress(req.params.taskId);
-      res.json(result);
-    } catch (e) {
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
-
-  // 获取所有视频任务
-  app.get('/api/videos', (req, res) => {
-    try {
-      const videoGen = require('./video-generator');
-      const tasks = videoGen.listAllTasks();
-      res.json({ success: true, tasks });
-    } catch (e) {
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
-
-  // 删除视频任务
-  app.delete('/api/video/:taskId', (req, res) => {
-    try {
-      const videoGen = require('./video-generator');
-      const result = videoGen.deleteTask(req.params.taskId);
-      res.json(result);
-    } catch (e) {
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
-
-  // 列出视频模型
-  app.get('/api/video/models', (req, res) => {
-    try {
-      const videoGen = require('./video-generator');
-      const models = videoGen.listModels();
-      res.json({ success: true, models });
-    } catch (e) {
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
-
-  // 切换视频模型
-  app.post('/api/video/switch', (req, res) => {
-    try {
-      const { model_id } = req.body;
-      if (!model_id) {
-        return res.status(400).json({ success: false, error: '缺少模型ID' });
-      }
-      
-      const videoGen = require('./video-generator');
-      const result = videoGen.switchModel(model_id);
-      res.json(result);
-    } catch (e) {
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
 
   // ===== Skills API =====
   const SKILLS_DIR = path.join(__dirname, 'skills');
@@ -339,47 +262,7 @@ function start(port = 5050) {
     }
   });
 
-  // API: 视频生成（通过agent处理）
-  app.post('/api/video-generate', async (req, res) => {
-    try {
-      const { message } = req.body;
-      if (!message) {
-        return res.status(400).json({ error: '缺少消息内容' });
-      }
-      
-      // 调用agent处理视频生成
-      const agent = require('./agent');
-      const result = await agent.process(message, io);
-      
-      res.json({ result: result || '视频生成请求已处理' });
-    } catch (e) {
-      console.error('[Server] 视频生成失败:', e);
-      res.status(500).json({ error: e.message });
-    }
-  });
 
-  // 快速视频生成API（不依赖agent）
-  app.post('/api/video/generate', async (req, res) => {
-    try {
-      const { prompt, duration = 5, ratio = '16:9' } = req.body;
-      if (!prompt) {
-        return res.status(400).json({ success: false, error: '缺少视频描述' });
-      }
-      
-      // 模拟视频生成过程
-      const taskId = `vid_${Date.now()}`;
-      const mockVideoUrl = `https://example.com/videos/${taskId}.mp4`;
-      
-      res.json({
-        success: true,
-        taskId,
-        videoUrl: mockVideoUrl,
-        message: '视频生成完成'
-      });
-    } catch (e) {
-      res.status(500).json({ success: false, error: e.message });
-    }
-  });
 
   // WebSocket 连接
   io.on('connection', (socket) => {
@@ -387,12 +270,6 @@ function start(port = 5050) {
     
     socket.on('disconnect', () => {
       console.log(`[Yicalw] Web 客户端断开: ${socket.id}`);
-    });
-
-    // 订阅视频进度
-    socket.on('subscribe_video', (taskId) => {
-      socket.join(`video:${taskId}`);
-      console.log(`[Yicalw] 客户端 ${socket.id} 订阅视频进度: ${taskId}`);
     });
 
     // 发送消息到 agent
