@@ -1,0 +1,35 @@
+{
+  "models": [
+    {
+      "name": "agnes-2.0-flash",
+      "apiKey": "sk-YahSruNVfnPhRvK7xzRWAFNOFvCx1aJR6Zk7BN8F8IjPMVMZ",
+      "endpoint": "https://apihub.agnes-ai.com/v1"
+    }
+  ],
+  "videoModels": [
+    {
+      "id": "dashscope-wanx2.1",
+      "name": "通义万相 2.1",
+      "provider": "dashscope",
+      "apiKey": "",
+      "endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "wanx2.1-t2v-turbo",
+      "maxDuration": 10,
+      "quality": "high",
+      "isDefault": true
+    },
+    {
+      "id": "runway-gen3",
+      "name": "Runway Gen-3",
+      "provider": "runwayml",
+      "apiKey": "",
+      "endpoint": "https://api.runwayml.com/v1",
+      "model": "gen-3-alpha",
+      "maxDuration": 5,
+      "quality": "ultra",
+      "isDefault": false
+    }
+  ],
+  "webPort": 5051,
+  "workDir": ""
+}
