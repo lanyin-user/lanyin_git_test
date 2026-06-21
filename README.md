@@ -1,6 +1,6 @@
 # Yicalw - 轻量级本地 AI 智能体
 
-比 PiPiClaw 更好用、更方便的 Python 风格 AI 助手（Node.js 实现）。
+基于 Node.js 实现的本地 AI 助手，支持对话、工具调用、定时任务和记忆系统。
 
 ## 功能
 
